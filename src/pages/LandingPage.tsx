@@ -11,16 +11,14 @@ const LandingPage = () => {
     return (
         <Box sx={{ width: '100%', overflowX: 'hidden' }}>
             
-            {/* --- Hero Section (Wide & Elegant) --- */}
             <Box sx={{ 
-                minHeight: '90vh', // גובה מסך מלא כמעט
+                minHeight: '90vh', 
                 display: 'flex', 
                 alignItems: 'center', 
-                background: 'linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%)', // רקע אפור-לבן נקי מאוד
+                background: 'linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%)',
                 position: 'relative',
                 py: 4
             }}>
-                {/* אלמנט עיצובי ברקע (Shape) לשבירת הסימטריה */}
                 <Box sx={{
                     position: 'absolute',
                     top: 0,
@@ -32,24 +30,22 @@ const LandingPage = () => {
                     zIndex: 0
                 }} />
 
-                <Container maxWidth="xl" sx={{ position: 'relative', zIndex: 1 }}> {/* שימוש ב-XL לרוחב מקסימלי */}
+                <Container maxWidth="xl" sx={{ position: 'relative', zIndex: 1 }}> 
                     <Paper 
-                        elevation={0} // ביטלתי את הצל הכבד
+                        elevation={0} 
                         sx={{ 
                             p: { xs: 4, md: 8 }, 
                             borderRadius: 6, 
-                            // מסגרת עדינה מאוד ושקופה
                             border: '1px solid rgba(255, 255, 255, 0.8)', 
-                            background: 'rgba(255, 255, 255, 0.4)', // שקיפות גבוהה
-                            backdropFilter: 'blur(20px)', // טשטוש חזק לרקע
-                            boxShadow: '0 8px 32px 0 rgba(31, 38, 135, 0.05)', // צללית רכה ועדינה
+                            background: 'rgba(255, 255, 255, 0.4)', 
+                            backdropFilter: 'blur(20px)', 
+                            boxShadow: '0 8px 32px 0 rgba(31, 38, 135, 0.05)', 
                             width: '100%'
                         }}
                     >
                         <Grid container spacing={4} alignItems="center">
                             
-                            {/* צד ימין - טקסט */}
-                            <Grid item xs={12} md={7} sx={{ textAlign: { xs: 'center', md: 'right' } }}>
+                            <Grid size={{ xs: 12, md: 7 }} sx={{ textAlign: { xs: 'center', md: 'right' } }}>
                                 <Typography 
                                     variant="h1" 
                                     component="h1" 
@@ -121,14 +117,13 @@ const LandingPage = () => {
                                 </Stack>
                             </Grid>
                             
-                            {/* צד שמאל - טיל אנימטיבי */}
-                            <Grid item xs={12} md={5} sx={{ display: 'flex', justifyContent: 'center', position: 'relative' }}>
-                                <Box className="floating-rocket"> {/* שימוש באנימציה מה-CSS */}
+                            <Grid size={{ xs: 12, md: 5 }} sx={{ display: 'flex', justifyContent: 'center', position: 'relative' }}>
+                                <Box className="floating-rocket"> 
                                     <RocketLaunchIcon 
                                         sx={{ 
-                                            fontSize: { xs: 200, md: 400 }, // טיל ענק
+                                            fontSize: { xs: 200, md: 400 }, 
                                             color: '#1976d2', 
-                                            filter: 'drop-shadow(0px 30px 60px rgba(25, 118, 210, 0.25))', // צללית רכה אך גדולה
+                                            filter: 'drop-shadow(0px 30px 60px rgba(25, 118, 210, 0.25))', 
                                             opacity: 0.9
                                         }} 
                                     />
@@ -139,7 +134,6 @@ const LandingPage = () => {
                 </Container>
             </Box>
 
-            {/* --- Features Section --- */}
             <Container maxWidth="xl" sx={{ py: 12, bgcolor: '#ffffff' }}>
                 <Box sx={{ textAlign: 'center', mb: 10 }}>
                     <Typography variant="h3" fontWeight={800} sx={{ color: '#1a237e', mb: 2 }}>
@@ -156,7 +150,7 @@ const LandingPage = () => {
                         { icon: <SecurityIcon sx={{ fontSize: 60 }} />, title: "אבטחה", desc: "תקני אבטחה מחמירים.", color: '#00E676' },
                         { icon: <SupportAgentIcon sx={{ fontSize: 60 }} />, title: "שירות", desc: "כלי ניהול חכמים.", color: '#651FFF' }
                     ].map((item, index) => (
-                        <Grid item xs={12} md={3} key={index}>
+                        <Grid size={{ xs: 12, md: 3 }} key={index}>
                             <Box 
                                 sx={{ 
                                     p: 4, 

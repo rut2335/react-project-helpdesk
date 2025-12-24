@@ -25,7 +25,7 @@ function AgentDashboard() {
                     </Typography>
                     
                     <Grid container justifyContent="center">
-                         <Grid item xs={12} md={6}>
+                         <Grid size={{ xs: 12, md: 6 }}>
                             <Card elevation={0} sx={{ borderRadius: 4, border: '1px solid #e0e0e0', transition: '0.3s', '&:hover': { transform: 'translateY(-8px)', boxShadow: '0 12px 24px rgba(0,0,0,0.1)' } }}>
                                 <CardActionArea onClick={() => navigate('tickets')} sx={{ p: 6, textAlign: 'center' }}>
                                     <Box sx={{ width: 80, height: 80, borderRadius: '50%', bgcolor: '#fff3e0', display: 'flex', alignItems: 'center', justifyContent: 'center', mx: 'auto', mb: 3 }}>

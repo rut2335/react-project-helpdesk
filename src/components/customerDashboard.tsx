@@ -28,7 +28,7 @@ const CustomerDashboard = () => {
 
                     <Grid container spacing={4} justifyContent="center">
                         {/* כרטיס פתיחת פניה */}
-                        <Grid item xs={12} md={5}>
+                        <Grid size={{ xs: 12, md: 5 }}>
                             <Card 
                                 elevation={0} 
                                 sx={{ 
@@ -53,7 +53,7 @@ const CustomerDashboard = () => {
                         </Grid>
 
                         {/* כרטיס הפניות שלי */}
-                        <Grid item xs={12} md={5}>
+                        <Grid size={{ xs: 12, md: 5 }}>
                             <Card 
                                 elevation={0}
                                 sx={{ 

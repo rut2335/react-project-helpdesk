@@ -15,7 +15,6 @@ const Layout = () => {
 
     return (
         <Box sx={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
-            {/* --- HEADER --- */}
             <AppBar position="sticky" elevation={0} sx={{ backgroundColor: '#1976d2', borderBottom: '1px solid rgba(255,255,255,0.1)', boxShadow: '0 4px 12px rgba(25, 118, 210, 0.2)' }}>
                 <Container maxWidth="xl">
                     <Toolbar disableGutters>
@@ -59,7 +58,6 @@ const Layout = () => {
                                 <>
                                     <Button color="inherit" onClick={() => navigate('/dashboard')}>דאשבורד</Button>
                                     
-                                    {/* כפתורי מנהל */}
                                     {user.role === 'admin' && (
                                         <>
                                             <Button color="inherit" onClick={() => navigate('/dashboard/tickets')}>פניות</Button>
@@ -92,17 +90,14 @@ const Layout = () => {
                 </Container>
             </AppBar>
 
-            {/* --- MAIN CONTENT --- */}
             <Box component="main" sx={{ flexGrow: 1, display: 'flex', flexDirection: 'column' }}>
                 <Outlet />
             </Box>
 
-            {/* --- FOOTER --- */}
             <Box component="footer" sx={{ py: 3, px: 2, mt: 'auto', backgroundColor: '#f8f9fa', borderTop: '1px solid #e0e0e0' }}>
                 <Container maxWidth="sm">
                     <Box sx={{ textAlign: 'center' }}>
                         
-                        {/* שם החברה + האייקון */}
                         <Stack direction="row" justifyContent="center" alignItems="center" spacing={1} sx={{ mb: 1 }}>
                             <SupportAgentIcon sx={{ color: '#1976d2' }} />
                             <Typography variant="h6" sx={{ fontWeight: 'bold', color: '#1976d2' }}>
@@ -110,11 +105,8 @@ const Layout = () => {
                             </Typography>
                         </Stack>
 
-                        {/* זכויות יוצרים באנגלית */}
                         <Typography variant="body2" color="text.secondary">
-                            {'All rights reserved © '}
-                            {new Date().getFullYear()}
-                            {' Ruti Shlezinger'}
+                            {'All rights reserved © Ruti Shlezinger 2025'}
                         </Typography>
                     </Box>
                 </Container>

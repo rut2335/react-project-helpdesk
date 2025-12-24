@@ -8,6 +8,8 @@ export interface TicketResponse {
   status_name: string | null,
   priority_name: string | null,
   created_by: number,
+  created_by_name: string | null,
+  assigned_to_name: string | null,
   created_at: string,
   updated_at: string
 }

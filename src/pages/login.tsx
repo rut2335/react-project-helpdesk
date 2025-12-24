@@ -7,7 +7,6 @@ import type { Inputs } from '../model/input';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from "../context/authContext";
 import { useState } from 'react';
-// אייקונים
 import EmailIcon from '@mui/icons-material/Email';
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
@@ -24,7 +23,6 @@ function Login() {
         try {
             const response = await loginService(data);
             setAuthLogin(response.data.user, response.data.token);
-            console.log(response.data);
             navigate('/dashboard');
         }
         catch (error) {
