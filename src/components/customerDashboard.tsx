@@ -12,7 +12,6 @@ const CustomerDashboard = () => {
 
     if (!user) return <div>Please log in.</div>;
     
-    // בודק אם אנחנו בנתיב הראשי
     const isMainDashboard = location.pathname.endsWith('/dashboard') || location.pathname.endsWith('/dashboard/');
 
     return (
@@ -27,7 +26,6 @@ const CustomerDashboard = () => {
                     </Typography>
 
                     <Grid container spacing={4} justifyContent="center">
-                        {/* כרטיס פתיחת פניה */}
                         <Grid size={{ xs: 12, md: 5 }}>
                             <Card 
                                 elevation={0} 
@@ -52,7 +50,6 @@ const CustomerDashboard = () => {
                             </Card>
                         </Grid>
 
-                        {/* כרטיס הפניות שלי */}
                         <Grid size={{ xs: 12, md: 5 }}>
                             <Card 
                                 elevation={0}
@@ -80,7 +77,6 @@ const CustomerDashboard = () => {
                 </Box>
              )}
             
-            {/* כאן מוצג התוכן הפנימי (רשימת פניות, טופס חדש וכו') */}
             <Box sx={{ mt: 4 }}>
                 <Outlet />
             </Box>

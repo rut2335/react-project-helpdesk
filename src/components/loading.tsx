@@ -35,29 +35,28 @@ function StyleSheet() {
     return (
         <style>
             {`
-            /* המעטפת שתופסת את כל המסך ויוצרת את הרקע הכהה */
             .loader-overlay {
                 position: fixed;
                 top: 0;
                 left: 0;
                 width: 100%;
                 height: 100%;
-                background-color: rgba(0, 0, 0, 0.5); /* שחור עם 50% שקיפות */
+                background-color: rgba(0, 0, 0, 0.5);
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                z-index: 9999; /* מוודא שזה מעל הכל */
-                backdrop-filter: blur(2px); /* אופציונלי: מטשטש מעט את הרקע */
+                z-index: 9999;
+                backdrop-filter: blur(2px);
             }
 
             .dots-container {
                 display: flex;
-                gap: 10px; /* רווח גדול יותר */
+                gap: 10px;
             }
 
             .dot {
-                width: 20px;  /* חזרנו לגודל המקורי */
-                height: 20px; /* חזרנו לגודל המקורי */
+                width: 20px;
+                height: 20px;
                 border-radius: 50%;
                 background-color: #1e0368ff;
                 will-change: transform;

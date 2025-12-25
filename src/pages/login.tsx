@@ -91,7 +91,6 @@ function Login() {
                                 })}
                                 error={!!errors.password}
                                 helperText={errors.password?.message as string || ''}
-                                // שינוי מיקום העין להתחלה (startAdornment)
                                 InputProps={{
                                     startAdornment: (
                                         <InputAdornment position="start">

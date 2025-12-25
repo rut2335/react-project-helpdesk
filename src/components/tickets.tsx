@@ -1,5 +1,5 @@
 import type { TicketResponse } from "../model/tickets";
-import { Box, IconButton, Tooltip, Card, CardContent, Typography, Chip, CardActions, Divider, Avatar } from "@mui/material";
+import { Box, IconButton, Tooltip, Card, CardContent, Typography, Chip, CardActions, Avatar } from "@mui/material";
 import { useTickets } from "../context/ticketContext";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../context/authContext";
@@ -16,6 +16,7 @@ import { getPriorities, getStatuses } from "../services/priorityAndStatus";
 import { getUser } from "../services/users-service";
 import type { User } from "../model/user";
 import Grid from '@mui/material/Grid';
+import Loader from "./loading";
 
 const Tickets = () => {
     const { user } = useAuth();
@@ -121,11 +122,10 @@ const Tickets = () => {
         });
     }
 
-    if (loading) return <div>Loading...</div>;
+    if (loading) return <Loader></Loader>;
 
     return (
         <>
-
             <Box sx={{ p: 4 }}>
                 <Box sx={{ mb: 5, textAlign: 'center' }}>
                     <Typography variant="h3" sx={{ fontWeight: 900, color: '#1976d2', mb: 1, letterSpacing: '-1px' }}>
@@ -175,7 +175,6 @@ const Tickets = () => {
                                                 px: 1
                                             }}
                                         />
-                                        {/* ID מעוצב */}
                                         <Avatar
                                             sx={{
                                                 width: 32,
@@ -190,7 +189,6 @@ const Tickets = () => {
                                         </Avatar>
                                     </Box>
                                     <Box sx={{ mb: 2 }}>
-                                        {/* מוצג למנהל ולסוכן בלבד - מי פתח את הפניה */}
                                         {(isAdmin || isAgent) && (
                                             <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mb: 0.5 }}>
                                                 <PersonIcon sx={{ fontSize: 18, color: '#78909c' }} />
@@ -200,7 +198,6 @@ const Tickets = () => {
                                             </Box>
                                         )}
 
-                                        {/* מוצג למנהל בלבד - מי הסוכן המטפל */}
                                         {isAdmin && (
                                             <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
                                                 <SupportAgentIcon sx={{ fontSize: 18, color: '#1976d2' }} />
@@ -210,7 +207,6 @@ const Tickets = () => {
                                             </Box>
                                         )}
                                     </Box>
-                                    {/* כותרת */}
                                     <Typography variant="h5" sx={{
                                         fontWeight: 800,
                                         mb: 1.5,
@@ -221,7 +217,6 @@ const Tickets = () => {
                                         {ticket.subject}
                                     </Typography>
 
-                                    {/* תיאור */}
                                     <Typography variant="body1" color="text.secondary" sx={{
                                         mb: 3,
                                         lineHeight: 1.6,
@@ -234,7 +229,6 @@ const Tickets = () => {
                                         {ticket.description}
                                     </Typography>
 
-                                    {/* שורה אמצעית: תאריך וסטטוס */}
                                     <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', mt: 'auto', pt: 2, borderTop: '1px dashed #eee' }}>
                                         <Box sx={{ display: 'flex', alignItems: 'center', color: '#90a4ae', fontSize: '0.85rem' }}>
                                             <AccessTimeIcon sx={{ fontSize: 16, mr: 0.5 }} />
@@ -256,7 +250,6 @@ const Tickets = () => {
                                     </Box>
                                 </CardContent>
 
-                                {/* כפתורים */}
                                 <CardActions sx={{ p: 2, justifyContent: 'flex-end', gap: 1 }}>
                                     <Tooltip title="צפייה בפרטים">
                                         <IconButton

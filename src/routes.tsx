@@ -22,7 +22,6 @@ function Routs() {
                     <Route path="/register" element={<Register />} />
                     
                     <Route path="/dashboard" element={<RoleGuard allowedRoles={['admin', 'agent', 'customer']}><Dashboard /></RoleGuard>} >
-                        {/* תיקון: הפכנו את הנתיבים לאחים כדי למנוע התנגשויות */}
                         <Route path="tickets" element={<Tickets />} />
                         <Route path="tickets/new" element={<RoleGuard allowedRoles={['customer']}><AddTickets /></RoleGuard>} />
                         <Route path="tickets/:id" element={<TicketDetail />} />

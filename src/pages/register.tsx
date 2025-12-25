@@ -5,7 +5,6 @@ import { useNavigate } from "react-router-dom";
 import { loginService, registerService } from "../services/auth-service";
 import { useAuth } from "../context/authContext";
 import { useState } from "react";
-// אייקונים
 import PersonIcon from '@mui/icons-material/Person';
 import EmailIcon from '@mui/icons-material/Email';
 import Visibility from '@mui/icons-material/Visibility';
@@ -136,7 +135,6 @@ function Register() {
                                 })}
                                 error={!!errors.password}
                                 helperText={errors.password?.message as string || ''}
-                                // שינוי מיקום העין להתחלה
                                 InputProps={{
                                     startAdornment: (
                                         <InputAdornment position="start">
